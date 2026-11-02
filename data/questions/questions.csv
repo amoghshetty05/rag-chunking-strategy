@@ -1,0 +1,33 @@
+﻿source,page,question,answer
+dbmsu1_notes.pdf,1,"How do the DBMS Unit 1 notes define data, as opposed to information?","Data is raw, unorganised fact that must be processed to become meaningful."
+dbmsu1_notes.pdf,4,What does the 'self-describing nature' characteristic of the database approach mean?,The system holds the database plus a complete definition of its structure and constraints (metadata) in the DBMS catalog.
+dbmsu1_notes.pdf,22,"For the lecture's sample tables, how many rows and columns does EMPLOYEE x DEPENDENT have?",56 rows and 15 columns.
+dbmsu1_notes.pdf,26,"In the pizza relational algebra solutions, how is the query for pizzerias frequented by at least one person under 18 solved?","Select Person tuples with age < 18, join them with Frequents, then project pizzeria."
+dbmsu2_notes.pdf,4,"In SQL, how do WHERE and HAVING differ, and in what order are WHERE, GROUP BY and HAVING executed?","WHERE filters individual tuples before grouping; HAVING filters whole groups after grouping/aggregation. Order: WHERE, then GROUP BY, then HAVING."
+dbmsu2_notes.pdf,5,"Does MySQL support FULL OUTER JOIN, and how can it be emulated?",No. It is emulated with LEFT OUTER JOIN UNION RIGHT OUTER JOIN.
+dbmsu2_notes.pdf,6,"When is NOT EXISTS true, and what is a typical use of it?","It is true when the nested query result is empty; typically used with correlated nested queries, e.g. employees with no dependents."
+dbmsu2_notes.pdf,12,How do RANK() and DENSE_RANK() differ when there are ties?,"RANK() gives ties the same rank and skips the next rank (1,1,3); DENSE_RANK() gives ties the same rank and continues consecutively (1,1,2)."
+dbmsu3_notes.pdf,6,"Why does WHERE salary+100 > 5000 fail to use an index on salary, and how can it be rewritten?","Wrapping the indexed column in an expression makes the predicate non-sargable, so a full table scan is used. Rewrite as WHERE salary > 4900."
+dbmsu3_notes.pdf,7,What are the two implicit goals of relational design in the Functional Dependencies notes?,Information preservation and minimum redundancy.
+dbmsu3_notes.pdf,28,When is a multivalued dependency X ->> Y considered trivial?,"If Y is a subset of X, or if X union Y equals R."
+dbmsu3_notes.pdf,35,"In the bibliographic relation example, what is the candidate key and why?","The pair {author, book title}, because a book may have several authors and an author may write several books."
+dbmsu4_notes.pdf,2,Which buffer replacement policy is described in the transactions notes and how does it pick a victim?,LRU (least recently used): it replaces the buffer unused for the longest time; a modified (dirty) buffer is written back to disk before reuse.
+dbmsu4_notes.pdf,3,"According to the SQL standard, how must every transaction end?",Explicitly with COMMIT or ROLLBACK (an explicit begin statement is not required).
+dbmsu4_notes.pdf,6,Why is result equivalence inadequate for defining the correctness of schedules?,Two schedules can produce the same final state by accident; in the example S1 and S2 agree only when X = 100.
+dbmsu4_notes.pdf,14,What is the difference between an unrepeatable read and a phantom?,An unrepeatable read is a changed value of a row already read; a phantom is a new or vanished row in the set returned when a query is re-executed.
+ML UNIT 1 combined.pdf,36,"In the Pacman reinforcement learning example, what are the states and what is the agent rewarded or punished for?",States are Pacman's locations in the grid; it is rewarded for eating food and punished if killed by a ghost.
+ML UNIT 1 combined.pdf,111,How are specificity (TNR) and precision calculated?,TNR = TN / (TN + FP); Precision = TP / (TP + FP).
+ML UNIT 1 combined.pdf,198,"In the decision tree example, what is the information gain for splitting on Outlook?","Gain(S, outlook) = 0.94 - 0.693 = 0.247."
+ML UNIT 1 combined.pdf,248,"To find the correct decision tree size, which has been more effective: stopping growth early or post-pruning?",Post-pruning.
+ml_unit2_combined.pdf,123,"Roughly how many trees give the maximum improvement in bagging, according to the slide?",About 50 trees (about 100 learners is generally considered good enough).
+ml_unit2_combined.pdf,213,What does the complementary slackness condition state in the KKT conditions?,"lambda * g(X) = 0: on the constraint surface g(X) = 0, and above it the constraint is inactive so lambda = 0."
+ml_unit2_combined.pdf,236,What is the kernel trick in SVMs?,"Using a function on the original-dimension vectors that returns the scalar equal to a dot product in a higher dimension, without explicitly projecting the data, which is computationally cheaper."
+ml_unit2_combined.pdf,296,"In Random Forest, if the dataset has M input attributes, how many are chosen per tree and why?","Only R attributes chosen at random with R < M, to avoid enormous computation and a high chance of overfitting."
+PE_combined_U2.pdf,123,"In the majority-vote LLM classification example, how is the final classification chosen?",The responses are counted per classification and the most frequent one is returned (expected output: Neutral).
+PE_combined_U2.pdf,153,What roles do messages in LangChain chat models have?,"System, User, Assistant, and Function (legacy, replaced by the 'tool' role)."
+PE_combined_U2.pdf,215,"In the LangChain query plan workflow, how are queries executed and how do results move between them?","Queries run in sequence or parallel depending on dependencies, and results flow from one query to the next."
+PE_combined_U2.pdf,243,What are the trade-offs when choosing chunk size in text splitting?,Too long exceeds the model's token limit; too short loses important context.
+SEU1_NOTES.pdf,1,How does Pressman define software engineering?,"As a layered technology consisting of a quality focus, processes, methods, and tools."
+SEU1_NOTES.pdf,2,Why does the Crowdstrike case show a lack of phased rollouts?,Updates with system-level privileges should be deployed in concentric rings (canary deployments); pushing a kernel-level update globally at once violates reliability engineering principles.
+SEU1_NOTES.pdf,4,What are the four core values of the Agile Manifesto listed in the notes?,Individuals and interactions over processes and tools; working software over comprehensive documentation; customer collaboration over contract negotiation; responding to change over following a plan.
+SEU1_NOTES.pdf,7,What is the difference between <<include>> and <<extend>> in UML use case diagrams?,<<include>>: the base use case mandatorily incorporates another use case's behaviour. <<extend>>: the base use case can optionally be extended by another under specific conditions.

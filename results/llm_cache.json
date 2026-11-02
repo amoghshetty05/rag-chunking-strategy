@@ -1,0 +1,194 @@
+{
+ "fixed_minilm|Why does WHERE salary+100 > 5000 fail to use an index on salary, and how can it be rewritten?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "Why does WHERE salary+100 > 5000 fail to use an index on salary, and how can it be rewritten?",
+  "answer": "Based on the context, `WHERE salary+100 > 5000` fails to use an index because wrapping the indexed column in an expression renders the predicate non-sargable: the system cannot map the computed value `salary+100` onto the ordered entries of an index built on salary, causing it to revert to a full table scan. \n\nIt can be rewritten so that the column stands alone, as: \n`WHERE salary > 4900`",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|In the decision tree example, what is the information gain for splitting on Outlook?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "In the decision tree example, what is the information gain for splitting on Outlook?",
+  "answer": "Not found in context.",
+  "faithful": 1,
+  "correct": 0
+ },
+ "fixed_minilm|What are the trade-offs when choosing chunk size in text splitting?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "What are the trade-offs when choosing chunk size in text splitting?",
+  "answer": "Not found in context.",
+  "faithful": 1,
+  "correct": 0
+ },
+ "fixed_minilm|What roles do messages in LangChain chat models have?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "What roles do messages in LangChain chat models have?",
+  "answer": "Based on the provided context, the roles in messages are:\n\n\u2022 System \u2013 Sets tone or instructs (guides the AI\u2019s behavior, e.g., \"Provide concise answer.\")\n\u2022 User (or Human) \u2013 Contains input from the human user\n\u2022 Assistant (or AI) \u2013 Contains assistant responses",
+  "faithful": 1,
+  "correct": 0
+ },
+ "fixed_minilm|In the majority-vote LLM classification example, how is the final classification chosen?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "In the majority-vote LLM classification example, how is the final classification chosen?",
+  "answer": "Based on the provided context, the final classification is chosen by picking the label that appears most frequently across responses (or using the `most_frequent_classification()` function which counts occurrences and returns the label with the highest frequency).",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|For the lecture's sample tables, how many rows and columns does EMPLOYEE x DEPENDENT have?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "For the lecture's sample tables, how many rows and columns does EMPLOYEE x DEPENDENT have?",
+  "answer": "Based on the provided context, EMPLOYEE \u00d7 DEPENDENT has 56 rows and 15 columns.",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|What is the difference between <<include>> and <<extend>> in UML use case diagrams?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "What is the difference between <<include>> and <<extend>> in UML use case diagrams?",
+  "answer": "Based on the provided context:\n\n* **<<include>>**: A base use case explicitly and mandatorily incorporates the behavior of another use case (e.g., \"Checkout\" <<include>> \"Calculate Tax\").\n* **<<extend>>**: A dashed arrow indicating that a base use case can optionally be extended by another use case under specific conditions (e.g., \"Login\" <<extend>> \"Show Invalid Password Error\").",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|In the pizza relational algebra solutions, how is the query for pizzerias frequented by at least one person under 18 solved?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "In the pizza relational algebra solutions, how is the query for pizzerias frequented by at least one person under 18 solved?",
+  "answer": "Based on the provided context, the query for pizzerias frequented by at least one person under 18 is solved as follows:\n\n$\\pi_{pizzeria} \\sigma_{age<18}(Person) \\bowtie Frequents$",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|What is the difference between an unrepeatable read and a phantom?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "What is the difference between an unrepeatable read and a phantom?",
+  "answer": "Based on the provided context, the difference is:\n\nAn unrepeatable read concerns a changed value of a row already read, whereas a phantom concerns a new or vanished row.",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|Why is result equivalence inadequate for defining the correctness of schedules?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "Why is result equivalence inadequate for defining the correctness of schedules?",
+  "answer": "Based on the provided context, result equivalence is inadequate because two schedules producing the same final state can be accidental (they may agree only for a specific value of $X$, such as $X = 100$, as shown in Table 2.4).",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|In Random Forest, if the dataset has M input attributes, how many are chosen per tree and why?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "In Random Forest, if the dataset has M input attributes, how many are chosen per tree and why?",
+  "answer": "Based on the provided context, only R attributes are chosen at random for each tree, where R < M. \n\nHowever, the context does not state *why* this specific number is chosen; it only mentions why *all* the input variables are not considered (which is \"because of enormous computation and high chances of over fitting\").",
+  "faithful": 0,
+  "correct": 0
+ },
+ "fixed_minilm|Roughly how many trees give the maximum improvement in bagging, according to the slide?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "Roughly how many trees give the maximum improvement in bagging, according to the slide?",
+  "answer": "~50 trees",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|Which buffer replacement policy is described in the transactions notes and how does it pick a victim?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "Which buffer replacement policy is described in the transactions notes and how does it pick a victim?",
+  "answer": "Based on the context, the buffer replacement policy described is LRU (least recently used), which picks a victim by choosing the buffer unused for the longest time.",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|When is NOT EXISTS true, and what is a typical use of it?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "When is NOT EXISTS true, and what is a typical use of it?",
+  "answer": "Based on the provided context:\n\n- **When is NOT EXISTS true:** It is true if the nested query result is empty.\n- **Typical use of it:** It is usually paired with a correlated nested query and is commonly used for 'for-all' (universal) conditions via double-negation (`NOT EXISTS ... EXCEPT ...`).",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|Why does the Crowdstrike case show a lack of phased rollouts?": {
+  "combo": "fixed_minilm",
+  "set": "A",
+  "question": "Why does the Crowdstrike case show a lack of phased rollouts?",
+  "answer": "Not found in context.",
+  "faithful": 1,
+  "correct": 0
+ },
+ "fixed_minilm|Which prompting tactic reduces hallucinations by tying answers to supplied text, and what should the model reply if the answer is absent?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "Which prompting tactic reduces hallucinations by tying answers to supplied text, and what should the model reply if the answer is absent?",
+  "answer": "Based on the provided context, the prompting tactic is **Reference text grounding** (which instructs the model to answer only using supplied reference text to reduce/avoid hallucinations). \n\nAccording to the prompt example provided in the context, if the answer is not found, the model should reply: **\"I could not find an answer.\"**",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|How is the key of a weak entity formed?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "How is the key of a weak entity formed?",
+  "answer": "Based on the provided context, the key of a weak entity is formed by the key of the identifying entity + the discriminator (partial key) of the weak entity. If a weak entity has more than one identifying entity, its key is the union of the owners' primary keys plus its discriminator.",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|Why reduce the learning rate over time during neural network training?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "Why reduce the learning rate over time during neural network training?",
+  "answer": "Based on the provided context, reducing the learning rate over time has the following benefits:\n\n* It allows for making large changes (or quickly learning good weights) at the beginning of the training procedure when larger learning rate values are used, and smaller training updates/fine-tuning later in the procedure [1, 2].\n* It can increase performance and reduce training time [2].\n* It helps gradually reduce the learning rate until a local minimum is obtained, especially in situations where the gradient takes noisy steps and oscillates around the minimum value without converging [3].",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|Is there a perfect recipe for choosing the transformation that makes data linearly separable?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "Is there a perfect recipe for choosing the transformation that makes data linearly separable?",
+  "answer": "No, according to the context, unfortunately, there is no perfect recipe.",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|Which abstraction level lets each user see only the part of the database relevant to their needs and permissions?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "Which abstraction level lets each user see only the part of the database relevant to their needs and permissions?",
+  "answer": "View",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|In a soft margin SVM, what happens when the regularisation parameter C is large?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "In a soft margin SVM, what happens when the regularisation parameter C is large?",
+  "answer": "Based on the provided context, when the regularization parameter C is large, the focus is more on avoiding misclassification at the expense of keeping the margin small. Additionally, a large value of C can cause overfitting.",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|How do OUT and INOUT parameter modes differ in a stored procedure?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "How do OUT and INOUT parameter modes differ in a stored procedure?",
+  "answer": "Based on the provided context, the parameter modes differ as follows:\n\n* **OUT:** The procedure sets a value that is returned to the caller.\n* **INOUT:** The caller passes a value in, the procedure may modify it, and the new value is returned.",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|In reduced error pruning, when is a decision node actually removed?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "In reduced error pruning, when is a decision node actually removed?",
+  "answer": "Based on the provided context, nodes are removed only if the resulting pruned tree performs no worse than the original over the validation set (specifically, choosing the node whose removal most increases the decision tree accuracy over the validation set).",
+  "faithful": 1,
+  "correct": 1
+ },
+ "fixed_minilm|How are instance weights updated in each boosting iteration?": {
+  "combo": "fixed_minilm",
+  "set": "B",
+  "question": "How are instance weights updated in each boosting iteration?",
+  "answer": "Based on the provided context, in each boosting iteration, misclassified instances get more weight and correctly classified instances get less weight.",
+  "faithful": 1,
+  "correct": 1
+ }
+}

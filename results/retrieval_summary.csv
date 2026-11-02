@@ -1,0 +1,7 @@
+chunking,embedding,chunks,hit@1,hit@3,hit@5,MRR,precision@5,latency_ms
+semantic,bge,2238,0.652,0.899,0.942,0.77,0.33,25.1
+fixed,minilm,2028,0.783,0.884,0.899,0.837,0.386,14.4
+sentence,minilm,1980,0.638,0.855,0.899,0.744,0.351,14.3
+semantic,minilm,2238,0.725,0.884,0.899,0.801,0.342,15.5
+fixed,bge,2028,0.667,0.884,0.899,0.769,0.354,24.7
+sentence,bge,1980,0.667,0.87,0.899,0.773,0.313,23.7
