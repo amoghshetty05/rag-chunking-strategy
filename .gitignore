@@ -1,6 +1,7 @@
-﻿venv/
+venv/
 data/raw/
 results/indexes/
 *.pkl
 .env
 __pycache__/
+Claude outputs/
