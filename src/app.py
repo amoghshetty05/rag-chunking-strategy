@@ -221,7 +221,7 @@ with tab2:
                     "method": label(cn, mk),
                     "top-1 source": f"{res[0]['source']} p{res[0]['page']}",
                     "top-1 score": round(res[0]["score"], 3),
-                    "expected page rank": ("-" if rk is None else (rk if rk else "miss")),
+                    "expected page rank": ("-" if rk is None else (str(rk) if rk else "miss")),
                     "latency (ms)": round(ms, 1),
                 })
         st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
@@ -249,6 +249,9 @@ with tab3:
             "**Takeaways:** hit@5 is 0.90–0.94 for every method and the 95% confidence intervals "
             "overlap, so no method is clearly better at finding the right page. Fixed-size + MiniLM "
             "ranks the right page first most often (hit@1 0.78, MRR 0.84) and is among the fastest. "
-            "BGE costs about 66% more latency without a clear gain. The Lewis et al. 2020 baseline "
-            "(100-word passages + DPR) scores far lower (hit@5 0.594, MRR 0.423) and is about 4.7× slower."
+            "BGE costs about 66% more latency without a clear gain. Of the 2025 paper settings, Amiri & Bocklitz's "
+            "100-token chunks with MiniLM reach the highest hit@5 (0.957, significant vs Fixed + MiniLM, p = 0.03) "
+            "with similar ranking quality. The Lewis et al. 2020 baseline (100-word passages + DPR) scores far lower "
+            "(hit@5 0.594, MRR 0.423) and is about 4.7× slower. Latencies of the 2025 settings were measured in a "
+            "separate run and are not directly comparable."
         )

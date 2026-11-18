@@ -118,8 +118,8 @@ streamlit run src/app.py           # interactive demo
 
 ### Demo app
 
-- **Retrieve:** pick a chunking strategy and embedding model, ask a question, see the top chunks with source, page, score and latency.
-- **Compare all 6:** one question through every pipeline side by side, with the rank of the expected page.
+- **Retrieve:** pick one of our pipelines, a 2025 paper setting or the Lewis 2020 baseline, ask a question, see the top chunks with source, page, score and latency.
+- **Compare all pipelines:** one question through our six pipelines, the 2025 paper settings and the Lewis 2020 baseline side by side, with the rank of the expected page.
 - **Benchmark:** the results table and charts.
 
 ### Optional: answer-level grading
