@@ -1,0 +1,2 @@
+chunking,embedding,chunks,hit@1,hit@3,hit@5,MRR,precision@5,latency_ms
+100-word (Lewis 2020),DPR multiset,1727,0.304,0.536,0.594,0.423,0.162,68.0
