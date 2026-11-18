@@ -1,0 +1,5 @@
+chunking,embedding,chunks,hit@1,hit@3,hit@5,MRR,precision@5,latency_ms
+amiri_r100,minilm,2340,0.71,0.913,0.957,0.812,0.383,24.1
+stabler_s512,minilm,1236,0.681,0.841,0.884,0.761,0.232,22.0
+amiri_r100,bge,2340,0.667,0.899,0.928,0.775,0.336,42.6
+stabler_s512,bge,1236,0.667,0.826,0.855,0.746,0.229,41.5

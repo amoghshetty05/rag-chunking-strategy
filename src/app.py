@@ -28,10 +28,20 @@ BASE_CHUNKS = "results/chunks_lewis100.pkl"
 BASE_INDEX = "results/indexes/lewis_dpr.faiss"
 DPR_Q_MODEL = "facebook/dpr-question_encoder-multiset-base"
 HAS_BASELINE = Path(BASE_CHUNKS).exists() and Path(BASE_INDEX).exists()
+RECENT = {
+    "amiri_r100": "Amiri & Bocklitz 2025 (100 tokens, no overlap)",
+    "stabler_s512": "Stabler et al. 2025 (sentences, 512-token window, 200 overlap)",
+}
+HAS_RECENT = all(Path(f"results/indexes/{c}_{m}.faiss").exists() for c in RECENT for m in ("minilm", "bge"))
+RECENT_SHORT = {"amiri_r100": "Amiri & Bocklitz 2025", "stabler_s512": "Stabler et al. 2025"}
 
 
 def label(cname, mkey):
-    return "Lewis 2020 baseline (100-word + DPR)" if cname == "lewis" else f"{cname} + {mkey}"
+    if cname == "lewis":
+        return "Lewis 2020 baseline (100-word + DPR)"
+    if cname in RECENT_SHORT:
+        return f"{RECENT_SHORT[cname]} + {mkey}"
+    return f"{cname} + {mkey}"
 
 
 st.set_page_config(page_title="RAG Chunking Comparison", page_icon="🔎", layout="wide")
@@ -85,6 +95,10 @@ def load_summary():
     except FileNotFoundError:
         return None
     df["method"] = df["chunking"] + " + " + df["embedding"]
+    if Path("results/baseline_recent_summary.csv").exists():
+        r = pd.read_csv("results/baseline_recent_summary.csv")
+        r["method"] = [label(c, m) for c, m in zip(r["chunking"], r["embedding"])]
+        df = pd.concat([df, r], ignore_index=True)
     if Path("results/baseline_lewis_summary.csv").exists():
         b = pd.read_csv("results/baseline_lewis_summary.csv")
         b["method"] = "Lewis 2020 baseline"
@@ -119,11 +133,19 @@ def hit_rank(results, expected):
 
 # ---------- sidebar ----------
 st.sidebar.title("Settings")
-modes = ["Our pipelines"] + (["Base paper: Lewis et al. 2020"] if HAS_BASELINE else [])
+modes = (["Our pipelines"] + (["Recent papers (2025)"] if HAS_RECENT else [])
+         + (["Base paper: Lewis et al. 2020"] if HAS_BASELINE else []))
 mode = st.sidebar.radio("Pipeline", modes)
 if mode == "Our pipelines":
     cname = st.sidebar.selectbox("Chunking strategy", CHUNKINGS, format_func=CHUNK_LABELS.get)
     mkey = st.sidebar.selectbox("Embedding model", list(MODELS), format_func=MODEL_LABELS.get)
+elif mode == "Recent papers (2025)":
+    cname = st.sidebar.selectbox("Paper's best chunking setting", list(RECENT), format_func=RECENT.get)
+    mkey = st.sidebar.selectbox("Embedding model", list(MODELS), format_func=MODEL_LABELS.get)
+    st.sidebar.info(
+        "Best chunking settings reported by two 2025 studies, run on our corpus and questions "
+        "with our embedding models: Amiri & Bocklitz (arXiv:2506.17277) and Stabler et al. (COINS 2025)."
+    )
 else:
     cname, mkey = "lewis", "dpr"
     st.sidebar.info(
@@ -159,7 +181,7 @@ question = st.text_input("Question", value=default_q,
 if expected and question.strip() != expected["question"].strip():
     expected = None  # user edited the question, so the expected page no longer applies
 
-tab1, tab2, tab3 = st.tabs(["Retrieve", "Compare all 6 methods", "Benchmark results"])
+tab1, tab2, tab3 = st.tabs(["Retrieve", "Compare all pipelines", "Benchmark results"])
 
 # ---------- tab 1: single method ----------
 with tab1:
@@ -188,6 +210,8 @@ with tab2:
     if question:
         rows = []
         combos = [(cn, mk) for mk in MODELS for cn in CHUNKINGS]
+        if HAS_RECENT:
+            combos += [(cn, mk) for mk in MODELS for cn in RECENT]
         if HAS_BASELINE:
             combos.append(("lewis", "dpr"))
         for cn, mk in combos:
@@ -201,7 +225,7 @@ with tab2:
                     "latency (ms)": round(ms, 1),
                 })
         st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
-        st.caption("Same question through all six of our pipelines and the Lewis et al. 2020 baseline, top-K as set in the sidebar.")
+        st.caption("Same question through our six pipelines, the 2025 paper settings and the Lewis et al. 2020 baseline (where built), top-K as set in the sidebar.")
     else:
         st.info("Enter a question above to compare all methods.")
 

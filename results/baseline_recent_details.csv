@@ -1,0 +1,277 @@
+combo,question,expected,first_hit_rank,top1_got,set
+amiri_r100_minilm,"How do the DBMS Unit 1 notes define data, as opposed to information?",dbmsu1_notes.pdf p1,1,dbmsu1_notes.pdf p1,A
+amiri_r100_minilm,What does the 'self-describing nature' characteristic of the database approach mean?,dbmsu1_notes.pdf p4,1,dbmsu1_notes.pdf p4,A
+amiri_r100_minilm,"For the lecture's sample tables, how many rows and columns does EMPLOYEE x DEPENDENT have?",dbmsu1_notes.pdf p22,1,dbmsu1_notes.pdf p22,A
+amiri_r100_minilm,"In the pizza relational algebra solutions, how is the query for pizzerias frequented by at least one person under 18 solved?",dbmsu1_notes.pdf p26,1,dbmsu1_notes.pdf p26,A
+amiri_r100_minilm,"In SQL, how do WHERE and HAVING differ, and in what order are WHERE, GROUP BY and HAVING executed?",dbmsu2_notes.pdf p4,3,dbmsu3_notes.pdf p4,A
+amiri_r100_minilm,"Does MySQL support FULL OUTER JOIN, and how can it be emulated?",dbmsu2_notes.pdf p5,1,dbmsu2_notes.pdf p5,A
+amiri_r100_minilm,"When is NOT EXISTS true, and what is a typical use of it?",dbmsu2_notes.pdf p6,2,dbmsu1_notes.pdf p9,A
+amiri_r100_minilm,How do RANK() and DENSE_RANK() differ when there are ties?,dbmsu2_notes.pdf p12,1,dbmsu2_notes.pdf p12,A
+amiri_r100_minilm,"Why does WHERE salary+100 > 5000 fail to use an index on salary, and how can it be rewritten?",dbmsu3_notes.pdf p6,1,dbmsu3_notes.pdf p6,A
+amiri_r100_minilm,What are the two implicit goals of relational design in the Functional Dependencies notes?,dbmsu3_notes.pdf p7,1,dbmsu3_notes.pdf p7,A
+amiri_r100_minilm,When is a multivalued dependency X ->> Y considered trivial?,dbmsu3_notes.pdf p28,1,dbmsu3_notes.pdf p28,A
+amiri_r100_minilm,"In the bibliographic relation example, what is the candidate key and why?",dbmsu3_notes.pdf p35,3,dbmsu3_notes.pdf p17,A
+amiri_r100_minilm,Which buffer replacement policy is described in the transactions notes and how does it pick a victim?,dbmsu4_notes.pdf p2,1,dbmsu4_notes.pdf p2,A
+amiri_r100_minilm,"According to the SQL standard, how must every transaction end?",dbmsu4_notes.pdf p3,1,dbmsu4_notes.pdf p3,A
+amiri_r100_minilm,Why is result equivalence inadequate for defining the correctness of schedules?,dbmsu4_notes.pdf p6,1,dbmsu4_notes.pdf p6,A
+amiri_r100_minilm,What is the difference between an unrepeatable read and a phantom?,dbmsu4_notes.pdf p14,1,dbmsu4_notes.pdf p14,A
+amiri_r100_minilm,"In the Pacman reinforcement learning example, what are the states and what is the agent rewarded or punished for?",ML UNIT 1 combined.pdf p36,1,ML UNIT 1 combined.pdf p36,A
+amiri_r100_minilm,How are specificity (TNR) and precision calculated?,ML UNIT 1 combined.pdf p111,2,ML UNIT 1 combined.pdf p114,A
+amiri_r100_minilm,"In the decision tree example, what is the information gain for splitting on Outlook?",ML UNIT 1 combined.pdf p198,1,ML UNIT 1 combined.pdf p198,A
+amiri_r100_minilm,"To find the correct decision tree size, which has been more effective: stopping growth early or post-pruning?",ML UNIT 1 combined.pdf p248,1,ML UNIT 1 combined.pdf p248,A
+amiri_r100_minilm,"Roughly how many trees give the maximum improvement in bagging, according to the slide?",ml_unit2_combined.pdf p123,1,ml_unit2_combined.pdf p123,A
+amiri_r100_minilm,What does the complementary slackness condition state in the KKT conditions?,ml_unit2_combined.pdf p213,2,ml_unit2_combined.pdf p225,A
+amiri_r100_minilm,What is the kernel trick in SVMs?,ml_unit2_combined.pdf p236,0,ml_unit2_combined.pdf p237,A
+amiri_r100_minilm,"In Random Forest, if the dataset has M input attributes, how many are chosen per tree and why?",ml_unit2_combined.pdf p296,1,ml_unit2_combined.pdf p296,A
+amiri_r100_minilm,"In the majority-vote LLM classification example, how is the final classification chosen?",PE_combined_U2.pdf p123,0,PE_combined_U2.pdf p121,A
+amiri_r100_minilm,What roles do messages in LangChain chat models have?,PE_combined_U2.pdf p153,1,PE_combined_U2.pdf p153,A
+amiri_r100_minilm,"In the LangChain query plan workflow, how are queries executed and how do results move between them?",PE_combined_U2.pdf p215,1,PE_combined_U2.pdf p215,A
+amiri_r100_minilm,What are the trade-offs when choosing chunk size in text splitting?,PE_combined_U2.pdf p243,0,PE_combined_U2.pdf p67,A
+amiri_r100_minilm,How does Pressman define software engineering?,SEU1_NOTES.pdf p1,1,SEU1_NOTES.pdf p1,A
+amiri_r100_minilm,Why does the Crowdstrike case show a lack of phased rollouts?,SEU1_NOTES.pdf p2,2,SEU1_NOTES.pdf p1,A
+amiri_r100_minilm,What are the four core values of the Agile Manifesto listed in the notes?,SEU1_NOTES.pdf p4,1,SEU1_NOTES.pdf p4,A
+amiri_r100_minilm,What is the difference between <<include>> and <<extend>> in UML use case diagrams?,SEU1_NOTES.pdf p7,1,SEU1_NOTES.pdf p7,A
+amiri_r100_minilm,Which abstraction level lets each user see only the part of the database relevant to their needs and permissions?,dbmsu1_notes.pdf p5,1,dbmsu1_notes.pdf p5,B
+amiri_r100_minilm,How is the key of a weak entity formed?,dbmsu1_notes.pdf p11,1,dbmsu1_notes.pdf p11,B
+amiri_r100_minilm,"In the smart-city example, how many infrastructure elements can a sensor be installed on, and how many sensors can one infrastructure element host?",dbmsu1_notes.pdf p13,1,dbmsu1_notes.pdf p13,B
+amiri_r100_minilm,"Why is a Cartesian product rarely useful by itself, and what makes it meaningful?",dbmsu1_notes.pdf p22,1,dbmsu1_notes.pdf p22,B
+amiri_r100_minilm,"What happens if a DELETE statement is run without a WHERE clause, and which statement removes the table definition?",dbmsu1_notes.pdf p34,1,dbmsu1_notes.pdf p34,B
+amiri_r100_minilm,"Which two wildcard characters does the LIKE operator use, and what does each match?",dbmsu2_notes.pdf p2,4,dbmsu2_notes.pdf p12,B
+amiri_r100_minilm,"What truth value does a comparison with NULL give, and when is a tuple kept in the result?",dbmsu2_notes.pdf p3,2,dbmsu3_notes.pdf p22,B
+amiri_r100_minilm,Under what conditions can data be modified through a view?,dbmsu2_notes.pdf p7,1,dbmsu2_notes.pdf p7,B
+amiri_r100_minilm,How do OUT and INOUT parameter modes differ in a stored procedure?,dbmsu2_notes.pdf p10,1,dbmsu2_notes.pdf p10,B
+amiri_r100_minilm,What does the LAG window function do and what is its default offset?,dbmsu2_notes.pdf p12,1,dbmsu2_notes.pdf p12,B
+amiri_r100_minilm,Which two-way join algorithm requires both files to be physically sorted on their join attributes?,dbmsu3_notes.pdf p3,1,dbmsu3_notes.pdf p3,B
+amiri_r100_minilm,Name two causes of slow queries and the effect each has.,dbmsu3_notes.pdf p4,1,dbmsu3_notes.pdf p4,B
+amiri_r100_minilm,How does creating an index change how query cost grows with table size?,dbmsu3_notes.pdf p6,1,dbmsu3_notes.pdf p6,B
+amiri_r100_minilm,How is it concluded that two sets of functional dependencies F and G are equivalent?,dbmsu3_notes.pdf p14,5,dbmsu3_notes.pdf p7,B
+amiri_r100_minilm,"For R(A,B,C,D,E) with A->B, B->E and C->D, what is the candidate key?",dbmsu3_notes.pdf p33,2,dbmsu3_notes.pdf p18,B
+amiri_r100_minilm,When do two operations in a schedule conflict?,dbmsu4_notes.pdf p5,2,dbmsu4_notes.pdf p6,B
+amiri_r100_minilm,When is a schedule conflict serializable?,dbmsu4_notes.pdf p6,1,dbmsu4_notes.pdf p6,B
+amiri_r100_minilm,"What does NoSQL stand for, and which four data models classify NoSQL databases?",dbmsu4_notes.pdf p16,1,dbmsu4_notes.pdf p16,B
+amiri_r100_minilm,How does MERGE differ from CREATE in Neo4j when an identical pattern already exists?,dbmsu4_notes.pdf p28,1,dbmsu4_notes.pdf p28,B
+amiri_r100_minilm,"Why can full-text search miss a document that says 'physician' when searching for 'doctor', while vector search finds it?",dbmsu4_notes.pdf p29,1,dbmsu4_notes.pdf p29,B
+amiri_r100_minilm,What does the value function represent in reinforcement learning?,ML UNIT 1 combined.pdf p38,1,ML UNIT 1 combined.pdf p38,B
+amiri_r100_minilm,"Which decision tree algorithm uses Gini impurity, and what does ID3 maximise at each node?",ML UNIT 1 combined.pdf p188,3,ML UNIT 1 combined.pdf p234,B
+amiri_r100_minilm,"What is early termination in decision tree pruning, and why is post-pruning preferred?",ML UNIT 1 combined.pdf p236,1,ML UNIT 1 combined.pdf p236,B
+amiri_r100_minilm,"In reduced error pruning, when is a decision node actually removed?",ML UNIT 1 combined.pdf p239,1,ML UNIT 1 combined.pdf p239,B
+amiri_r100_minilm,Why reduce the learning rate over time during neural network training?,ml_unit2_combined.pdf p74,1,ml_unit2_combined.pdf p74,B
+amiri_r100_minilm,How are instance weights updated in each boosting iteration?,ml_unit2_combined.pdf p126,1,ml_unit2_combined.pdf p126,B
+amiri_r100_minilm,How do kernel methods represent data instead of explicitly applying the transformation to higher dimensions?,ml_unit2_combined.pdf p238,1,ml_unit2_combined.pdf p238,B
+amiri_r100_minilm,Is there a perfect recipe for choosing the transformation that makes data linearly separable?,ml_unit2_combined.pdf p239,2,ml_unit2_combined.pdf p231,B
+amiri_r100_minilm,"In a soft margin SVM, what happens when the regularisation parameter C is large?",ml_unit2_combined.pdf p285,1,ml_unit2_combined.pdf p285,B
+amiri_r100_minilm,How does extractive summarisation produce a summary?,PE_combined_U2.pdf p19,4,PE_combined_U2.pdf p28,B
+amiri_r100_minilm,How does abstractive summarisation differ from simply copying sentences?,PE_combined_U2.pdf p20,2,PE_combined_U2.pdf p19,B
+amiri_r100_minilm,"Which prompting tactic reduces hallucinations by tying answers to supplied text, and what should the model reply if the answer is absent?",PE_combined_U2.pdf p102,1,PE_combined_U2.pdf p102,B
+amiri_r100_minilm,When was the term 'Software Crisis' coined and what did it describe?,SEU1_NOTES.pdf p1,1,SEU1_NOTES.pdf p1,B
+amiri_r100_minilm,"Which configuration-management failure did the Crowdstrike incident show, according to Pressman's view?",SEU1_NOTES.pdf p2,2,SEU1_NOTES.pdf p1,B
+amiri_r100_minilm,"Why do plan-driven models like Waterfall struggle in dynamic business environments, according to Sommerville?",SEU1_NOTES.pdf p4,3,SEU1_NOTES.pdf p2,B
+amiri_r100_minilm,Which Scrum event is the 15-minute daily synchronisation meeting?,SEU1_NOTES.pdf p5,1,SEU1_NOTES.pdf p5,B
+amiri_r100_minilm,What is fuzz testing?,SEU1_NOTES.pdf p8,1,SEU1_NOTES.pdf p8,B
+stabler_s512_minilm,"How do the DBMS Unit 1 notes define data, as opposed to information?",dbmsu1_notes.pdf p1,1,dbmsu1_notes.pdf p1,A
+stabler_s512_minilm,What does the 'self-describing nature' characteristic of the database approach mean?,dbmsu1_notes.pdf p4,0,dbmsu1_notes.pdf p1,A
+stabler_s512_minilm,"For the lecture's sample tables, how many rows and columns does EMPLOYEE x DEPENDENT have?",dbmsu1_notes.pdf p22,1,dbmsu1_notes.pdf p22,A
+stabler_s512_minilm,"In the pizza relational algebra solutions, how is the query for pizzerias frequented by at least one person under 18 solved?",dbmsu1_notes.pdf p26,1,dbmsu1_notes.pdf p26,A
+stabler_s512_minilm,"In SQL, how do WHERE and HAVING differ, and in what order are WHERE, GROUP BY and HAVING executed?",dbmsu2_notes.pdf p4,1,dbmsu2_notes.pdf p4,A
+stabler_s512_minilm,"Does MySQL support FULL OUTER JOIN, and how can it be emulated?",dbmsu2_notes.pdf p5,1,dbmsu2_notes.pdf p5,A
+stabler_s512_minilm,"When is NOT EXISTS true, and what is a typical use of it?",dbmsu2_notes.pdf p6,0,dbmsu3_notes.pdf p19,A
+stabler_s512_minilm,How do RANK() and DENSE_RANK() differ when there are ties?,dbmsu2_notes.pdf p12,1,dbmsu2_notes.pdf p12,A
+stabler_s512_minilm,"Why does WHERE salary+100 > 5000 fail to use an index on salary, and how can it be rewritten?",dbmsu3_notes.pdf p6,1,dbmsu3_notes.pdf p6,A
+stabler_s512_minilm,What are the two implicit goals of relational design in the Functional Dependencies notes?,dbmsu3_notes.pdf p7,1,dbmsu3_notes.pdf p7,A
+stabler_s512_minilm,When is a multivalued dependency X ->> Y considered trivial?,dbmsu3_notes.pdf p28,3,dbmsu3_notes.pdf p30,A
+stabler_s512_minilm,"In the bibliographic relation example, what is the candidate key and why?",dbmsu3_notes.pdf p35,0,dbmsu3_notes.pdf p25,A
+stabler_s512_minilm,Which buffer replacement policy is described in the transactions notes and how does it pick a victim?,dbmsu4_notes.pdf p2,1,dbmsu4_notes.pdf p2,A
+stabler_s512_minilm,"According to the SQL standard, how must every transaction end?",dbmsu4_notes.pdf p3,1,dbmsu4_notes.pdf p3,A
+stabler_s512_minilm,Why is result equivalence inadequate for defining the correctness of schedules?,dbmsu4_notes.pdf p6,1,dbmsu4_notes.pdf p6,A
+stabler_s512_minilm,What is the difference between an unrepeatable read and a phantom?,dbmsu4_notes.pdf p14,1,dbmsu4_notes.pdf p14,A
+stabler_s512_minilm,"In the Pacman reinforcement learning example, what are the states and what is the agent rewarded or punished for?",ML UNIT 1 combined.pdf p36,1,ML UNIT 1 combined.pdf p36,A
+stabler_s512_minilm,How are specificity (TNR) and precision calculated?,ML UNIT 1 combined.pdf p111,4,ML UNIT 1 combined.pdf p110,A
+stabler_s512_minilm,"In the decision tree example, what is the information gain for splitting on Outlook?",ML UNIT 1 combined.pdf p198,2,ML UNIT 1 combined.pdf p196,A
+stabler_s512_minilm,"To find the correct decision tree size, which has been more effective: stopping growth early or post-pruning?",ML UNIT 1 combined.pdf p248,1,ML UNIT 1 combined.pdf p248,A
+stabler_s512_minilm,"Roughly how many trees give the maximum improvement in bagging, according to the slide?",ml_unit2_combined.pdf p123,1,ml_unit2_combined.pdf p123,A
+stabler_s512_minilm,What does the complementary slackness condition state in the KKT conditions?,ml_unit2_combined.pdf p213,1,ml_unit2_combined.pdf p213,A
+stabler_s512_minilm,What is the kernel trick in SVMs?,ml_unit2_combined.pdf p236,4,ml_unit2_combined.pdf p237,A
+stabler_s512_minilm,"In Random Forest, if the dataset has M input attributes, how many are chosen per tree and why?",ml_unit2_combined.pdf p296,1,ml_unit2_combined.pdf p296,A
+stabler_s512_minilm,"In the majority-vote LLM classification example, how is the final classification chosen?",PE_combined_U2.pdf p123,0,PE_combined_U2.pdf p121,A
+stabler_s512_minilm,What roles do messages in LangChain chat models have?,PE_combined_U2.pdf p153,1,PE_combined_U2.pdf p153,A
+stabler_s512_minilm,"In the LangChain query plan workflow, how are queries executed and how do results move between them?",PE_combined_U2.pdf p215,1,PE_combined_U2.pdf p215,A
+stabler_s512_minilm,What are the trade-offs when choosing chunk size in text splitting?,PE_combined_U2.pdf p243,0,PE_combined_U2.pdf p67,A
+stabler_s512_minilm,How does Pressman define software engineering?,SEU1_NOTES.pdf p1,1,SEU1_NOTES.pdf p1,A
+stabler_s512_minilm,Why does the Crowdstrike case show a lack of phased rollouts?,SEU1_NOTES.pdf p2,1,SEU1_NOTES.pdf p2,A
+stabler_s512_minilm,What are the four core values of the Agile Manifesto listed in the notes?,SEU1_NOTES.pdf p4,1,SEU1_NOTES.pdf p4,A
+stabler_s512_minilm,What is the difference between <<include>> and <<extend>> in UML use case diagrams?,SEU1_NOTES.pdf p7,1,SEU1_NOTES.pdf p7,A
+stabler_s512_minilm,Which abstraction level lets each user see only the part of the database relevant to their needs and permissions?,dbmsu1_notes.pdf p5,1,dbmsu1_notes.pdf p5,B
+stabler_s512_minilm,How is the key of a weak entity formed?,dbmsu1_notes.pdf p11,3,dbmsu1_notes.pdf p18,B
+stabler_s512_minilm,"In the smart-city example, how many infrastructure elements can a sensor be installed on, and how many sensors can one infrastructure element host?",dbmsu1_notes.pdf p13,1,dbmsu1_notes.pdf p13,B
+stabler_s512_minilm,"Why is a Cartesian product rarely useful by itself, and what makes it meaningful?",dbmsu1_notes.pdf p22,1,dbmsu1_notes.pdf p22,B
+stabler_s512_minilm,"What happens if a DELETE statement is run without a WHERE clause, and which statement removes the table definition?",dbmsu1_notes.pdf p34,0,dbmsu1_notes.pdf p29,B
+stabler_s512_minilm,"Which two wildcard characters does the LIKE operator use, and what does each match?",dbmsu2_notes.pdf p2,0,ML UNIT 1 combined.pdf p82,B
+stabler_s512_minilm,"What truth value does a comparison with NULL give, and when is a tuple kept in the result?",dbmsu2_notes.pdf p3,3,dbmsu3_notes.pdf p22,B
+stabler_s512_minilm,Under what conditions can data be modified through a view?,dbmsu2_notes.pdf p7,1,dbmsu2_notes.pdf p7,B
+stabler_s512_minilm,How do OUT and INOUT parameter modes differ in a stored procedure?,dbmsu2_notes.pdf p10,1,dbmsu2_notes.pdf p10,B
+stabler_s512_minilm,What does the LAG window function do and what is its default offset?,dbmsu2_notes.pdf p12,0,PE_combined_U2.pdf p69,B
+stabler_s512_minilm,Which two-way join algorithm requires both files to be physically sorted on their join attributes?,dbmsu3_notes.pdf p3,1,dbmsu3_notes.pdf p3,B
+stabler_s512_minilm,Name two causes of slow queries and the effect each has.,dbmsu3_notes.pdf p4,1,dbmsu3_notes.pdf p4,B
+stabler_s512_minilm,How does creating an index change how query cost grows with table size?,dbmsu3_notes.pdf p6,1,dbmsu3_notes.pdf p6,B
+stabler_s512_minilm,How is it concluded that two sets of functional dependencies F and G are equivalent?,dbmsu3_notes.pdf p14,5,dbmsu3_notes.pdf p13,B
+stabler_s512_minilm,"For R(A,B,C,D,E) with A->B, B->E and C->D, what is the candidate key?",dbmsu3_notes.pdf p33,2,dbmsu3_notes.pdf p17,B
+stabler_s512_minilm,When do two operations in a schedule conflict?,dbmsu4_notes.pdf p5,2,dbmsu4_notes.pdf p6,B
+stabler_s512_minilm,When is a schedule conflict serializable?,dbmsu4_notes.pdf p6,1,dbmsu4_notes.pdf p6,B
+stabler_s512_minilm,"What does NoSQL stand for, and which four data models classify NoSQL databases?",dbmsu4_notes.pdf p16,1,dbmsu4_notes.pdf p16,B
+stabler_s512_minilm,How does MERGE differ from CREATE in Neo4j when an identical pattern already exists?,dbmsu4_notes.pdf p28,1,dbmsu4_notes.pdf p28,B
+stabler_s512_minilm,"Why can full-text search miss a document that says 'physician' when searching for 'doctor', while vector search finds it?",dbmsu4_notes.pdf p29,1,dbmsu4_notes.pdf p29,B
+stabler_s512_minilm,What does the value function represent in reinforcement learning?,ML UNIT 1 combined.pdf p38,1,ML UNIT 1 combined.pdf p38,B
+stabler_s512_minilm,"Which decision tree algorithm uses Gini impurity, and what does ID3 maximise at each node?",ML UNIT 1 combined.pdf p188,1,ML UNIT 1 combined.pdf p188,B
+stabler_s512_minilm,"What is early termination in decision tree pruning, and why is post-pruning preferred?",ML UNIT 1 combined.pdf p236,1,ML UNIT 1 combined.pdf p236,B
+stabler_s512_minilm,"In reduced error pruning, when is a decision node actually removed?",ML UNIT 1 combined.pdf p239,1,ML UNIT 1 combined.pdf p239,B
+stabler_s512_minilm,Why reduce the learning rate over time during neural network training?,ml_unit2_combined.pdf p74,1,ml_unit2_combined.pdf p74,B
+stabler_s512_minilm,How are instance weights updated in each boosting iteration?,ml_unit2_combined.pdf p126,1,ml_unit2_combined.pdf p126,B
+stabler_s512_minilm,How do kernel methods represent data instead of explicitly applying the transformation to higher dimensions?,ml_unit2_combined.pdf p238,1,ml_unit2_combined.pdf p238,B
+stabler_s512_minilm,Is there a perfect recipe for choosing the transformation that makes data linearly separable?,ml_unit2_combined.pdf p239,2,ml_unit2_combined.pdf p231,B
+stabler_s512_minilm,"In a soft margin SVM, what happens when the regularisation parameter C is large?",ml_unit2_combined.pdf p285,1,ml_unit2_combined.pdf p285,B
+stabler_s512_minilm,How does extractive summarisation produce a summary?,PE_combined_U2.pdf p19,3,PE_combined_U2.pdf p28,B
+stabler_s512_minilm,How does abstractive summarisation differ from simply copying sentences?,PE_combined_U2.pdf p20,2,PE_combined_U2.pdf p19,B
+stabler_s512_minilm,"Which prompting tactic reduces hallucinations by tying answers to supplied text, and what should the model reply if the answer is absent?",PE_combined_U2.pdf p102,2,PE_combined_U2.pdf p101,B
+stabler_s512_minilm,When was the term 'Software Crisis' coined and what did it describe?,SEU1_NOTES.pdf p1,1,SEU1_NOTES.pdf p1,B
+stabler_s512_minilm,"Which configuration-management failure did the Crowdstrike incident show, according to Pressman's view?",SEU1_NOTES.pdf p2,1,SEU1_NOTES.pdf p2,B
+stabler_s512_minilm,"Why do plan-driven models like Waterfall struggle in dynamic business environments, according to Sommerville?",SEU1_NOTES.pdf p4,1,SEU1_NOTES.pdf p4,B
+stabler_s512_minilm,Which Scrum event is the 15-minute daily synchronisation meeting?,SEU1_NOTES.pdf p5,2,SEU1_NOTES.pdf p4,B
+stabler_s512_minilm,What is fuzz testing?,SEU1_NOTES.pdf p8,1,SEU1_NOTES.pdf p8,B
+amiri_r100_bge,"How do the DBMS Unit 1 notes define data, as opposed to information?",dbmsu1_notes.pdf p1,1,dbmsu1_notes.pdf p1,A
+amiri_r100_bge,What does the 'self-describing nature' characteristic of the database approach mean?,dbmsu1_notes.pdf p4,1,dbmsu1_notes.pdf p4,A
+amiri_r100_bge,"For the lecture's sample tables, how many rows and columns does EMPLOYEE x DEPENDENT have?",dbmsu1_notes.pdf p22,1,dbmsu1_notes.pdf p22,A
+amiri_r100_bge,"In the pizza relational algebra solutions, how is the query for pizzerias frequented by at least one person under 18 solved?",dbmsu1_notes.pdf p26,1,dbmsu1_notes.pdf p26,A
+amiri_r100_bge,"In SQL, how do WHERE and HAVING differ, and in what order are WHERE, GROUP BY and HAVING executed?",dbmsu2_notes.pdf p4,1,dbmsu2_notes.pdf p4,A
+amiri_r100_bge,"Does MySQL support FULL OUTER JOIN, and how can it be emulated?",dbmsu2_notes.pdf p5,1,dbmsu2_notes.pdf p5,A
+amiri_r100_bge,"When is NOT EXISTS true, and what is a typical use of it?",dbmsu2_notes.pdf p6,0,dbmsu4_notes.pdf p13,A
+amiri_r100_bge,How do RANK() and DENSE_RANK() differ when there are ties?,dbmsu2_notes.pdf p12,1,dbmsu2_notes.pdf p12,A
+amiri_r100_bge,"Why does WHERE salary+100 > 5000 fail to use an index on salary, and how can it be rewritten?",dbmsu3_notes.pdf p6,3,dbmsu1_notes.pdf p34,A
+amiri_r100_bge,What are the two implicit goals of relational design in the Functional Dependencies notes?,dbmsu3_notes.pdf p7,1,dbmsu3_notes.pdf p7,A
+amiri_r100_bge,When is a multivalued dependency X ->> Y considered trivial?,dbmsu3_notes.pdf p28,1,dbmsu3_notes.pdf p28,A
+amiri_r100_bge,"In the bibliographic relation example, what is the candidate key and why?",dbmsu3_notes.pdf p35,4,dbmsu3_notes.pdf p7,A
+amiri_r100_bge,Which buffer replacement policy is described in the transactions notes and how does it pick a victim?,dbmsu4_notes.pdf p2,1,dbmsu4_notes.pdf p2,A
+amiri_r100_bge,"According to the SQL standard, how must every transaction end?",dbmsu4_notes.pdf p3,1,dbmsu4_notes.pdf p3,A
+amiri_r100_bge,Why is result equivalence inadequate for defining the correctness of schedules?,dbmsu4_notes.pdf p6,1,dbmsu4_notes.pdf p6,A
+amiri_r100_bge,What is the difference between an unrepeatable read and a phantom?,dbmsu4_notes.pdf p14,1,dbmsu4_notes.pdf p14,A
+amiri_r100_bge,"In the Pacman reinforcement learning example, what are the states and what is the agent rewarded or punished for?",ML UNIT 1 combined.pdf p36,1,ML UNIT 1 combined.pdf p36,A
+amiri_r100_bge,How are specificity (TNR) and precision calculated?,ML UNIT 1 combined.pdf p111,0,ML UNIT 1 combined.pdf p114,A
+amiri_r100_bge,"In the decision tree example, what is the information gain for splitting on Outlook?",ML UNIT 1 combined.pdf p198,2,ML UNIT 1 combined.pdf p196,A
+amiri_r100_bge,"To find the correct decision tree size, which has been more effective: stopping growth early or post-pruning?",ML UNIT 1 combined.pdf p248,1,ML UNIT 1 combined.pdf p248,A
+amiri_r100_bge,"Roughly how many trees give the maximum improvement in bagging, according to the slide?",ml_unit2_combined.pdf p123,1,ml_unit2_combined.pdf p123,A
+amiri_r100_bge,What does the complementary slackness condition state in the KKT conditions?,ml_unit2_combined.pdf p213,3,ml_unit2_combined.pdf p222,A
+amiri_r100_bge,What is the kernel trick in SVMs?,ml_unit2_combined.pdf p236,0,ml_unit2_combined.pdf p235,A
+amiri_r100_bge,"In Random Forest, if the dataset has M input attributes, how many are chosen per tree and why?",ml_unit2_combined.pdf p296,1,ml_unit2_combined.pdf p296,A
+amiri_r100_bge,"In the majority-vote LLM classification example, how is the final classification chosen?",PE_combined_U2.pdf p123,4,PE_combined_U2.pdf p121,A
+amiri_r100_bge,What roles do messages in LangChain chat models have?,PE_combined_U2.pdf p153,2,PE_combined_U2.pdf p154,A
+amiri_r100_bge,"In the LangChain query plan workflow, how are queries executed and how do results move between them?",PE_combined_U2.pdf p215,1,PE_combined_U2.pdf p215,A
+amiri_r100_bge,What are the trade-offs when choosing chunk size in text splitting?,PE_combined_U2.pdf p243,0,PE_combined_U2.pdf p67,A
+amiri_r100_bge,How does Pressman define software engineering?,SEU1_NOTES.pdf p1,1,SEU1_NOTES.pdf p1,A
+amiri_r100_bge,Why does the Crowdstrike case show a lack of phased rollouts?,SEU1_NOTES.pdf p2,2,SEU1_NOTES.pdf p1,A
+amiri_r100_bge,What are the four core values of the Agile Manifesto listed in the notes?,SEU1_NOTES.pdf p4,1,SEU1_NOTES.pdf p4,A
+amiri_r100_bge,What is the difference between <<include>> and <<extend>> in UML use case diagrams?,SEU1_NOTES.pdf p7,1,SEU1_NOTES.pdf p7,A
+amiri_r100_bge,Which abstraction level lets each user see only the part of the database relevant to their needs and permissions?,dbmsu1_notes.pdf p5,1,dbmsu1_notes.pdf p5,B
+amiri_r100_bge,How is the key of a weak entity formed?,dbmsu1_notes.pdf p11,1,dbmsu1_notes.pdf p11,B
+amiri_r100_bge,"In the smart-city example, how many infrastructure elements can a sensor be installed on, and how many sensors can one infrastructure element host?",dbmsu1_notes.pdf p13,1,dbmsu1_notes.pdf p13,B
+amiri_r100_bge,"Why is a Cartesian product rarely useful by itself, and what makes it meaningful?",dbmsu1_notes.pdf p22,1,dbmsu1_notes.pdf p22,B
+amiri_r100_bge,"What happens if a DELETE statement is run without a WHERE clause, and which statement removes the table definition?",dbmsu1_notes.pdf p34,1,dbmsu1_notes.pdf p34,B
+amiri_r100_bge,"Which two wildcard characters does the LIKE operator use, and what does each match?",dbmsu2_notes.pdf p2,3,dbmsu2_notes.pdf p13,B
+amiri_r100_bge,"What truth value does a comparison with NULL give, and when is a tuple kept in the result?",dbmsu2_notes.pdf p3,1,dbmsu2_notes.pdf p3,B
+amiri_r100_bge,Under what conditions can data be modified through a view?,dbmsu2_notes.pdf p7,1,dbmsu2_notes.pdf p7,B
+amiri_r100_bge,How do OUT and INOUT parameter modes differ in a stored procedure?,dbmsu2_notes.pdf p10,1,dbmsu2_notes.pdf p10,B
+amiri_r100_bge,What does the LAG window function do and what is its default offset?,dbmsu2_notes.pdf p12,1,dbmsu2_notes.pdf p12,B
+amiri_r100_bge,Which two-way join algorithm requires both files to be physically sorted on their join attributes?,dbmsu3_notes.pdf p3,1,dbmsu3_notes.pdf p3,B
+amiri_r100_bge,Name two causes of slow queries and the effect each has.,dbmsu3_notes.pdf p4,1,dbmsu3_notes.pdf p4,B
+amiri_r100_bge,How does creating an index change how query cost grows with table size?,dbmsu3_notes.pdf p6,3,dbmsu3_notes.pdf p4,B
+amiri_r100_bge,How is it concluded that two sets of functional dependencies F and G are equivalent?,dbmsu3_notes.pdf p14,3,dbmsu3_notes.pdf p7,B
+amiri_r100_bge,"For R(A,B,C,D,E) with A->B, B->E and C->D, what is the candidate key?",dbmsu3_notes.pdf p33,1,dbmsu3_notes.pdf p33,B
+amiri_r100_bge,When do two operations in a schedule conflict?,dbmsu4_notes.pdf p5,2,dbmsu4_notes.pdf p6,B
+amiri_r100_bge,When is a schedule conflict serializable?,dbmsu4_notes.pdf p6,1,dbmsu4_notes.pdf p6,B
+amiri_r100_bge,"What does NoSQL stand for, and which four data models classify NoSQL databases?",dbmsu4_notes.pdf p16,1,dbmsu4_notes.pdf p16,B
+amiri_r100_bge,How does MERGE differ from CREATE in Neo4j when an identical pattern already exists?,dbmsu4_notes.pdf p28,1,dbmsu4_notes.pdf p28,B
+amiri_r100_bge,"Why can full-text search miss a document that says 'physician' when searching for 'doctor', while vector search finds it?",dbmsu4_notes.pdf p29,1,dbmsu4_notes.pdf p29,B
+amiri_r100_bge,What does the value function represent in reinforcement learning?,ML UNIT 1 combined.pdf p38,1,ML UNIT 1 combined.pdf p38,B
+amiri_r100_bge,"Which decision tree algorithm uses Gini impurity, and what does ID3 maximise at each node?",ML UNIT 1 combined.pdf p188,0,ML UNIT 1 combined.pdf p234,B
+amiri_r100_bge,"What is early termination in decision tree pruning, and why is post-pruning preferred?",ML UNIT 1 combined.pdf p236,3,ML UNIT 1 combined.pdf p239,B
+amiri_r100_bge,"In reduced error pruning, when is a decision node actually removed?",ML UNIT 1 combined.pdf p239,1,ML UNIT 1 combined.pdf p239,B
+amiri_r100_bge,Why reduce the learning rate over time during neural network training?,ml_unit2_combined.pdf p74,1,ml_unit2_combined.pdf p74,B
+amiri_r100_bge,How are instance weights updated in each boosting iteration?,ml_unit2_combined.pdf p126,2,ml_unit2_combined.pdf p80,B
+amiri_r100_bge,How do kernel methods represent data instead of explicitly applying the transformation to higher dimensions?,ml_unit2_combined.pdf p238,1,ml_unit2_combined.pdf p238,B
+amiri_r100_bge,Is there a perfect recipe for choosing the transformation that makes data linearly separable?,ml_unit2_combined.pdf p239,2,ml_unit2_combined.pdf p231,B
+amiri_r100_bge,"In a soft margin SVM, what happens when the regularisation parameter C is large?",ml_unit2_combined.pdf p285,2,ml_unit2_combined.pdf p288,B
+amiri_r100_bge,How does extractive summarisation produce a summary?,PE_combined_U2.pdf p19,2,PE_combined_U2.pdf p23,B
+amiri_r100_bge,How does abstractive summarisation differ from simply copying sentences?,PE_combined_U2.pdf p20,1,PE_combined_U2.pdf p20,B
+amiri_r100_bge,"Which prompting tactic reduces hallucinations by tying answers to supplied text, and what should the model reply if the answer is absent?",PE_combined_U2.pdf p102,1,PE_combined_U2.pdf p102,B
+amiri_r100_bge,When was the term 'Software Crisis' coined and what did it describe?,SEU1_NOTES.pdf p1,1,SEU1_NOTES.pdf p1,B
+amiri_r100_bge,"Which configuration-management failure did the Crowdstrike incident show, according to Pressman's view?",SEU1_NOTES.pdf p2,2,SEU1_NOTES.pdf p1,B
+amiri_r100_bge,"Why do plan-driven models like Waterfall struggle in dynamic business environments, according to Sommerville?",SEU1_NOTES.pdf p4,2,SEU1_NOTES.pdf p2,B
+amiri_r100_bge,Which Scrum event is the 15-minute daily synchronisation meeting?,SEU1_NOTES.pdf p5,1,SEU1_NOTES.pdf p5,B
+amiri_r100_bge,What is fuzz testing?,SEU1_NOTES.pdf p8,1,SEU1_NOTES.pdf p8,B
+stabler_s512_bge,"How do the DBMS Unit 1 notes define data, as opposed to information?",dbmsu1_notes.pdf p1,1,dbmsu1_notes.pdf p1,A
+stabler_s512_bge,What does the 'self-describing nature' characteristic of the database approach mean?,dbmsu1_notes.pdf p4,1,dbmsu1_notes.pdf p4,A
+stabler_s512_bge,"For the lecture's sample tables, how many rows and columns does EMPLOYEE x DEPENDENT have?",dbmsu1_notes.pdf p22,1,dbmsu1_notes.pdf p22,A
+stabler_s512_bge,"In the pizza relational algebra solutions, how is the query for pizzerias frequented by at least one person under 18 solved?",dbmsu1_notes.pdf p26,1,dbmsu1_notes.pdf p26,A
+stabler_s512_bge,"In SQL, how do WHERE and HAVING differ, and in what order are WHERE, GROUP BY and HAVING executed?",dbmsu2_notes.pdf p4,0,dbmsu2_notes.pdf p2,A
+stabler_s512_bge,"Does MySQL support FULL OUTER JOIN, and how can it be emulated?",dbmsu2_notes.pdf p5,2,dbmsu3_notes.pdf p2,A
+stabler_s512_bge,"When is NOT EXISTS true, and what is a typical use of it?",dbmsu2_notes.pdf p6,0,dbmsu4_notes.pdf p3,A
+stabler_s512_bge,How do RANK() and DENSE_RANK() differ when there are ties?,dbmsu2_notes.pdf p12,1,dbmsu2_notes.pdf p12,A
+stabler_s512_bge,"Why does WHERE salary+100 > 5000 fail to use an index on salary, and how can it be rewritten?",dbmsu3_notes.pdf p6,2,dbmsu1_notes.pdf p34,A
+stabler_s512_bge,What are the two implicit goals of relational design in the Functional Dependencies notes?,dbmsu3_notes.pdf p7,1,dbmsu3_notes.pdf p7,A
+stabler_s512_bge,When is a multivalued dependency X ->> Y considered trivial?,dbmsu3_notes.pdf p28,2,dbmsu3_notes.pdf p30,A
+stabler_s512_bge,"In the bibliographic relation example, what is the candidate key and why?",dbmsu3_notes.pdf p35,3,dbmsu3_notes.pdf p25,A
+stabler_s512_bge,Which buffer replacement policy is described in the transactions notes and how does it pick a victim?,dbmsu4_notes.pdf p2,1,dbmsu4_notes.pdf p2,A
+stabler_s512_bge,"According to the SQL standard, how must every transaction end?",dbmsu4_notes.pdf p3,1,dbmsu4_notes.pdf p3,A
+stabler_s512_bge,Why is result equivalence inadequate for defining the correctness of schedules?,dbmsu4_notes.pdf p6,1,dbmsu4_notes.pdf p6,A
+stabler_s512_bge,What is the difference between an unrepeatable read and a phantom?,dbmsu4_notes.pdf p14,1,dbmsu4_notes.pdf p14,A
+stabler_s512_bge,"In the Pacman reinforcement learning example, what are the states and what is the agent rewarded or punished for?",ML UNIT 1 combined.pdf p36,1,ML UNIT 1 combined.pdf p36,A
+stabler_s512_bge,How are specificity (TNR) and precision calculated?,ML UNIT 1 combined.pdf p111,1,ML UNIT 1 combined.pdf p111,A
+stabler_s512_bge,"In the decision tree example, what is the information gain for splitting on Outlook?",ML UNIT 1 combined.pdf p198,1,ML UNIT 1 combined.pdf p198,A
+stabler_s512_bge,"To find the correct decision tree size, which has been more effective: stopping growth early or post-pruning?",ML UNIT 1 combined.pdf p248,1,ML UNIT 1 combined.pdf p248,A
+stabler_s512_bge,"Roughly how many trees give the maximum improvement in bagging, according to the slide?",ml_unit2_combined.pdf p123,1,ml_unit2_combined.pdf p123,A
+stabler_s512_bge,What does the complementary slackness condition state in the KKT conditions?,ml_unit2_combined.pdf p213,1,ml_unit2_combined.pdf p213,A
+stabler_s512_bge,What is the kernel trick in SVMs?,ml_unit2_combined.pdf p236,0,ml_unit2_combined.pdf p235,A
+stabler_s512_bge,"In Random Forest, if the dataset has M input attributes, how many are chosen per tree and why?",ml_unit2_combined.pdf p296,1,ml_unit2_combined.pdf p296,A
+stabler_s512_bge,"In the majority-vote LLM classification example, how is the final classification chosen?",PE_combined_U2.pdf p123,4,PE_combined_U2.pdf p121,A
+stabler_s512_bge,What roles do messages in LangChain chat models have?,PE_combined_U2.pdf p153,1,PE_combined_U2.pdf p153,A
+stabler_s512_bge,"In the LangChain query plan workflow, how are queries executed and how do results move between them?",PE_combined_U2.pdf p215,1,PE_combined_U2.pdf p215,A
+stabler_s512_bge,What are the trade-offs when choosing chunk size in text splitting?,PE_combined_U2.pdf p243,0,PE_combined_U2.pdf p67,A
+stabler_s512_bge,How does Pressman define software engineering?,SEU1_NOTES.pdf p1,1,SEU1_NOTES.pdf p1,A
+stabler_s512_bge,Why does the Crowdstrike case show a lack of phased rollouts?,SEU1_NOTES.pdf p2,1,SEU1_NOTES.pdf p2,A
+stabler_s512_bge,What are the four core values of the Agile Manifesto listed in the notes?,SEU1_NOTES.pdf p4,1,SEU1_NOTES.pdf p4,A
+stabler_s512_bge,What is the difference between <<include>> and <<extend>> in UML use case diagrams?,SEU1_NOTES.pdf p7,1,SEU1_NOTES.pdf p7,A
+stabler_s512_bge,Which abstraction level lets each user see only the part of the database relevant to their needs and permissions?,dbmsu1_notes.pdf p5,1,dbmsu1_notes.pdf p5,B
+stabler_s512_bge,How is the key of a weak entity formed?,dbmsu1_notes.pdf p11,1,dbmsu1_notes.pdf p11,B
+stabler_s512_bge,"In the smart-city example, how many infrastructure elements can a sensor be installed on, and how many sensors can one infrastructure element host?",dbmsu1_notes.pdf p13,1,dbmsu1_notes.pdf p13,B
+stabler_s512_bge,"Why is a Cartesian product rarely useful by itself, and what makes it meaningful?",dbmsu1_notes.pdf p22,5,dbmsu3_notes.pdf p9,B
+stabler_s512_bge,"What happens if a DELETE statement is run without a WHERE clause, and which statement removes the table definition?",dbmsu1_notes.pdf p34,0,dbmsu2_notes.pdf p7,B
+stabler_s512_bge,"Which two wildcard characters does the LIKE operator use, and what does each match?",dbmsu2_notes.pdf p2,0,dbmsu4_notes.pdf p36,B
+stabler_s512_bge,"What truth value does a comparison with NULL give, and when is a tuple kept in the result?",dbmsu2_notes.pdf p3,2,dbmsu3_notes.pdf p22,B
+stabler_s512_bge,Under what conditions can data be modified through a view?,dbmsu2_notes.pdf p7,1,dbmsu2_notes.pdf p7,B
+stabler_s512_bge,How do OUT and INOUT parameter modes differ in a stored procedure?,dbmsu2_notes.pdf p10,1,dbmsu2_notes.pdf p10,B
+stabler_s512_bge,What does the LAG window function do and what is its default offset?,dbmsu2_notes.pdf p12,0,PE_combined_U2.pdf p70,B
+stabler_s512_bge,Which two-way join algorithm requires both files to be physically sorted on their join attributes?,dbmsu3_notes.pdf p3,1,dbmsu3_notes.pdf p3,B
+stabler_s512_bge,Name two causes of slow queries and the effect each has.,dbmsu3_notes.pdf p4,1,dbmsu3_notes.pdf p4,B
+stabler_s512_bge,How does creating an index change how query cost grows with table size?,dbmsu3_notes.pdf p6,1,dbmsu3_notes.pdf p6,B
+stabler_s512_bge,How is it concluded that two sets of functional dependencies F and G are equivalent?,dbmsu3_notes.pdf p14,3,dbmsu3_notes.pdf p13,B
+stabler_s512_bge,"For R(A,B,C,D,E) with A->B, B->E and C->D, what is the candidate key?",dbmsu3_notes.pdf p33,0,dbmsu3_notes.pdf p18,B
+stabler_s512_bge,When do two operations in a schedule conflict?,dbmsu4_notes.pdf p5,1,dbmsu4_notes.pdf p5,B
+stabler_s512_bge,When is a schedule conflict serializable?,dbmsu4_notes.pdf p6,1,dbmsu4_notes.pdf p6,B
+stabler_s512_bge,"What does NoSQL stand for, and which four data models classify NoSQL databases?",dbmsu4_notes.pdf p16,1,dbmsu4_notes.pdf p16,B
+stabler_s512_bge,How does MERGE differ from CREATE in Neo4j when an identical pattern already exists?,dbmsu4_notes.pdf p28,1,dbmsu4_notes.pdf p28,B
+stabler_s512_bge,"Why can full-text search miss a document that says 'physician' when searching for 'doctor', while vector search finds it?",dbmsu4_notes.pdf p29,1,dbmsu4_notes.pdf p29,B
+stabler_s512_bge,What does the value function represent in reinforcement learning?,ML UNIT 1 combined.pdf p38,1,ML UNIT 1 combined.pdf p38,B
+stabler_s512_bge,"Which decision tree algorithm uses Gini impurity, and what does ID3 maximise at each node?",ML UNIT 1 combined.pdf p188,0,ML UNIT 1 combined.pdf p228,B
+stabler_s512_bge,"What is early termination in decision tree pruning, and why is post-pruning preferred?",ML UNIT 1 combined.pdf p236,0,ML UNIT 1 combined.pdf p239,B
+stabler_s512_bge,"In reduced error pruning, when is a decision node actually removed?",ML UNIT 1 combined.pdf p239,1,ML UNIT 1 combined.pdf p239,B
+stabler_s512_bge,Why reduce the learning rate over time during neural network training?,ml_unit2_combined.pdf p74,1,ml_unit2_combined.pdf p74,B
+stabler_s512_bge,How are instance weights updated in each boosting iteration?,ml_unit2_combined.pdf p126,2,ml_unit2_combined.pdf p80,B
+stabler_s512_bge,How do kernel methods represent data instead of explicitly applying the transformation to higher dimensions?,ml_unit2_combined.pdf p238,1,ml_unit2_combined.pdf p238,B
+stabler_s512_bge,Is there a perfect recipe for choosing the transformation that makes data linearly separable?,ml_unit2_combined.pdf p239,2,ml_unit2_combined.pdf p231,B
+stabler_s512_bge,"In a soft margin SVM, what happens when the regularisation parameter C is large?",ml_unit2_combined.pdf p285,2,ml_unit2_combined.pdf p288,B
+stabler_s512_bge,How does extractive summarisation produce a summary?,PE_combined_U2.pdf p19,1,PE_combined_U2.pdf p19,B
+stabler_s512_bge,How does abstractive summarisation differ from simply copying sentences?,PE_combined_U2.pdf p20,1,PE_combined_U2.pdf p20,B
+stabler_s512_bge,"Which prompting tactic reduces hallucinations by tying answers to supplied text, and what should the model reply if the answer is absent?",PE_combined_U2.pdf p102,1,PE_combined_U2.pdf p102,B
+stabler_s512_bge,When was the term 'Software Crisis' coined and what did it describe?,SEU1_NOTES.pdf p1,1,SEU1_NOTES.pdf p1,B
+stabler_s512_bge,"Which configuration-management failure did the Crowdstrike incident show, according to Pressman's view?",SEU1_NOTES.pdf p2,1,SEU1_NOTES.pdf p2,B
+stabler_s512_bge,"Why do plan-driven models like Waterfall struggle in dynamic business environments, according to Sommerville?",SEU1_NOTES.pdf p4,3,SEU1_NOTES.pdf p2,B
+stabler_s512_bge,Which Scrum event is the 15-minute daily synchronisation meeting?,SEU1_NOTES.pdf p5,2,SEU1_NOTES.pdf p4,B
+stabler_s512_bge,What is fuzz testing?,SEU1_NOTES.pdf p8,1,SEU1_NOTES.pdf p8,B

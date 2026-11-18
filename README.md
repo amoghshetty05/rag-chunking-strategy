@@ -51,6 +51,24 @@ Chunking is done page by page, so every chunk carries one source page. A retriev
 - **Paraphrased questions were not harder** than near-verbatim ones.
 - **Error analysis:** only 1 question was missed by every pipeline. Several misses are correct answers on a neighbouring page, a limit of strict page-level scoring.
 
+## Comparison with published work
+
+The best settings from three papers were run on the same corpus and 69 questions:
+
+| Setting (paper) | Model | hit@1 | hit@5 | MRR |
+|---|---|---|---|---|
+| **Ours: Fixed 500 chars** | MiniLM | **0.783** | 0.899 | **0.837** |
+| 100 tokens, no overlap (Amiri & Bocklitz 2025) | MiniLM | 0.710 | **0.957** | 0.812 |
+| 100 tokens, no overlap (Amiri & Bocklitz 2025) | BGE | 0.667 | 0.928 | 0.775 |
+| 512-token sentence windows, 200 overlap (Stabler et al. 2025) | MiniLM | 0.681 | 0.884 | 0.761 |
+| 512-token sentence windows, 200 overlap (Stabler et al. 2025) | BGE | 0.667 | 0.855 | 0.746 |
+| 100-word passages + DPR (Lewis et al. 2020, original RAG retriever) | DPR | 0.304 | 0.594 | 0.423 |
+
+- 100-token chunks reach the highest top-5 recall (significant vs Fixed + MiniLM, p = 0.03); ranking (hit@1, MRR) is not significantly different.
+- Long 512-token windows do worse, and the original 2020 RAG retriever does far worse on course notes (likely domain shift).
+
+Scripts: `src/baseline_recent_2025.py` and `src/baseline_lewis_rag.py`. Both appear in the demo app's sidebar once run.
+
 ## Repository structure
 
 ```
@@ -63,6 +81,8 @@ src/
   evaluate_retrieval.py   run all questions on all 6 pipelines
   analyze_results.py      misses, bootstrap confidence intervals, per-set scores
   generate_and_grade.py   optional: answer + grade with a local LLM (Ollama)
+  baseline_lewis_rag.py   baseline: Lewis et al. 2020 retriever (100-word + DPR)
+  baseline_recent_2025.py baselines: best chunking settings of two 2025 papers
   app.py                  Streamlit demo
 data/
   raw/                    course PDFs (not included, see below)
