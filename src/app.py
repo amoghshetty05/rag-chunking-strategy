@@ -1,7 +1,10 @@
 """
 RAG Chunking & Embedding Comparison - live demo
 Run from the project folder:  streamlit run src/app.py
+Includes the base-paper retriever (Lewis et al. 2020: 100-word passages + DPR) as a baseline;
+its passages and index are built by src/baseline_lewis_rag.py.
 """
+from pathlib import Path
 import csv
 import pickle
 import time
@@ -21,6 +24,16 @@ CHUNK_LABELS = {
     "semantic": "Semantic (meaning-shift split)",
 }
 
+BASE_CHUNKS = "results/chunks_lewis100.pkl"
+BASE_INDEX = "results/indexes/lewis_dpr.faiss"
+DPR_Q_MODEL = "facebook/dpr-question_encoder-multiset-base"
+HAS_BASELINE = Path(BASE_CHUNKS).exists() and Path(BASE_INDEX).exists()
+
+
+def label(cname, mkey):
+    return "Lewis 2020 baseline (100-word + DPR)" if cname == "lewis" else f"{cname} + {mkey}"
+
+
 st.set_page_config(page_title="RAG Chunking Comparison", page_icon="🔎", layout="wide")
 
 
@@ -32,15 +45,28 @@ def load_model(key):
     return m
 
 
+@st.cache_resource(show_spinner="Loading DPR question encoder (base paper)...")
+def load_dpr():
+    import torch
+    from transformers import DPRQuestionEncoder, DPRQuestionEncoderTokenizerFast
+    torch.set_grad_enabled(False)
+    tok = DPRQuestionEncoderTokenizerFast.from_pretrained(DPR_Q_MODEL)
+    enc = DPRQuestionEncoder.from_pretrained(DPR_Q_MODEL).eval()
+    enc(**tok(["warm up"], return_tensors="pt"))
+    return tok, enc
+
+
 @st.cache_resource(show_spinner="Loading chunks...")
 def load_chunks(cname):
-    with open(f"results/chunks_{cname}.pkl", "rb") as f:
+    path = BASE_CHUNKS if cname == "lewis" else f"results/chunks_{cname}.pkl"
+    with open(path, "rb") as f:
         return pickle.load(f)
 
 
 @st.cache_resource(show_spinner="Loading FAISS index...")
 def load_index(cname, mkey):
-    return faiss.read_index(f"results/indexes/{cname}_{mkey}.faiss")
+    path = BASE_INDEX if cname == "lewis" else f"results/indexes/{cname}_{mkey}.faiss"
+    return faiss.read_index(path)
 
 
 @st.cache_data
@@ -55,15 +81,27 @@ def load_questions():
 @st.cache_data
 def load_summary():
     try:
-        return pd.read_csv("results/retrieval_summary.csv")
+        df = pd.read_csv("results/retrieval_summary.csv")
     except FileNotFoundError:
         return None
+    df["method"] = df["chunking"] + " + " + df["embedding"]
+    if Path("results/baseline_lewis_summary.csv").exists():
+        b = pd.read_csv("results/baseline_lewis_summary.csv")
+        b["method"] = "Lewis 2020 baseline"
+        df = pd.concat([df, b], ignore_index=True)
+    return df
 
 
 def retrieve(question, cname, mkey, k):
-    model, chunks, index = load_model(mkey), load_chunks(cname), load_index(cname, mkey)
-    t0 = time.perf_counter()
-    qv = model.encode([question], normalize_embeddings=True)
+    chunks, index = load_chunks(cname), load_index(cname, mkey)
+    if cname == "lewis":
+        tok, enc = load_dpr()
+        t0 = time.perf_counter()
+        qv = enc(**tok([question], truncation=True, max_length=64, return_tensors="pt")).pooler_output.numpy()
+    else:
+        model = load_model(mkey)
+        t0 = time.perf_counter()
+        qv = model.encode([question], normalize_embeddings=True)
     scores, idx = index.search(np.asarray(qv, dtype="float32"), k)
     ms = (time.perf_counter() - t0) * 1000
     results = [dict(chunks[i], score=float(s)) for s, i in zip(scores[0], idx[0])]
@@ -81,8 +119,17 @@ def hit_rank(results, expected):
 
 # ---------- sidebar ----------
 st.sidebar.title("Settings")
-cname = st.sidebar.selectbox("Chunking strategy", CHUNKINGS, format_func=CHUNK_LABELS.get)
-mkey = st.sidebar.selectbox("Embedding model", list(MODELS), format_func=MODEL_LABELS.get)
+modes = ["Our pipelines"] + (["Base paper: Lewis et al. 2020"] if HAS_BASELINE else [])
+mode = st.sidebar.radio("Pipeline", modes)
+if mode == "Our pipelines":
+    cname = st.sidebar.selectbox("Chunking strategy", CHUNKINGS, format_func=CHUNK_LABELS.get)
+    mkey = st.sidebar.selectbox("Embedding model", list(MODELS), format_func=MODEL_LABELS.get)
+else:
+    cname, mkey = "lewis", "dpr"
+    st.sidebar.info(
+        "Original RAG retriever (Lewis et al., NeurIPS 2020): disjoint 100-word passages, "
+        "DPR question and passage encoders (BERT-base, 768-d), FAISS inner-product search."
+    )
 k = st.sidebar.slider("Top-K chunks", 1, 10, 5)
 st.sidebar.markdown("---")
 st.sidebar.caption(
@@ -109,6 +156,8 @@ else:
 
 question = st.text_input("Question", value=default_q,
                          placeholder="e.g. What is the kernel trick in SVMs?")
+if expected and question.strip() != expected["question"].strip():
+    expected = None  # user edited the question, so the expected page no longer applies
 
 tab1, tab2, tab3 = st.tabs(["Retrieve", "Compare all 6 methods", "Benchmark results"])
 
@@ -117,7 +166,7 @@ with tab1:
     if question:
         results, ms = retrieve(question, cname, mkey, k)
         c1, c2, c3 = st.columns(3)
-        c1.metric("Method", f"{cname} + {mkey}")
+        c1.metric("Method", label(cname, mkey))
         c2.metric("Retrieval latency", f"{ms:.1f} ms")
         rank = hit_rank(results, expected)
         if rank is None:
@@ -138,19 +187,21 @@ with tab1:
 with tab2:
     if question:
         rows = []
-        for mk in MODELS:
-            for cn in CHUNKINGS:
+        combos = [(cn, mk) for mk in MODELS for cn in CHUNKINGS]
+        if HAS_BASELINE:
+            combos.append(("lewis", "dpr"))
+        for cn, mk in combos:
                 res, ms = retrieve(question, cn, mk, k)
                 rk = hit_rank(res, expected)
                 rows.append({
-                    "method": f"{cn} + {mk}",
+                    "method": label(cn, mk),
                     "top-1 source": f"{res[0]['source']} p{res[0]['page']}",
                     "top-1 score": round(res[0]["score"], 3),
                     "expected page rank": ("-" if rk is None else (rk if rk else "miss")),
                     "latency (ms)": round(ms, 1),
                 })
-        st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
-        st.caption("Same question, all six chunking × embedding combinations, top-K as set in the sidebar.")
+        st.dataframe(pd.DataFrame(rows), width="stretch", hide_index=True)
+        st.caption("Same question through all six of our pipelines and the Lewis et al. 2020 baseline, top-K as set in the sidebar.")
     else:
         st.info("Enter a question above to compare all methods.")
 
@@ -161,9 +212,8 @@ with tab3:
         st.warning("results/retrieval_summary.csv not found. Run src/evaluate_retrieval.py first.")
     else:
         df = df.copy()
-        df["method"] = df["chunking"] + " + " + df["embedding"]
         st.subheader("Retrieval benchmark (69 questions, K = 5)")
-        st.dataframe(df.drop(columns=["method"]), use_container_width=True, hide_index=True)
+        st.dataframe(df.drop(columns=["method"]), width="stretch", hide_index=True)
         c1, c2 = st.columns(2)
         with c1:
             st.caption("hit@1 / hit@5 / MRR")
@@ -175,5 +225,6 @@ with tab3:
             "**Takeaways:** hit@5 is 0.90–0.94 for every method and the 95% confidence intervals "
             "overlap, so no method is clearly better at finding the right page. Fixed-size + MiniLM "
             "ranks the right page first most often (hit@1 0.78, MRR 0.84) and is among the fastest. "
-            "BGE costs about 70% more latency without a clear gain."
+            "BGE costs about 66% more latency without a clear gain. The Lewis et al. 2020 baseline "
+            "(100-word passages + DPR) scores far lower (hit@5 0.594, MRR 0.423) and is about 4.7× slower."
         )
