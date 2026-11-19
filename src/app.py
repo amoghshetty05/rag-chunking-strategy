@@ -111,7 +111,7 @@ def retrieve(question, cname, mkey, k):
     if cname == "lewis":
         tok, enc = load_dpr()
         t0 = time.perf_counter()
-        qv = enc(**tok([question], truncation=True, max_length=64, return_tensors="pt")).pooler_output.numpy()
+        qv = enc(**tok([question], truncation=True, max_length=64, return_tensors="pt")).pooler_output.detach().numpy()
     else:
         model = load_model(mkey)
         t0 = time.perf_counter()
